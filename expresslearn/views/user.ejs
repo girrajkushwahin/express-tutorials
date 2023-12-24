@@ -1,0 +1,17 @@
+<%- include('layout/header') %>
+
+<main>
+  <h1>User page</h1>
+  <% if(userData.length>0){ %>
+  <p>your name is - <%= userData[0] %></p>
+  <p>your profession is - <%= userData[1] %></p>
+  <p>your age is - <%= userData[2] %></p>
+  <a href="/contact">go to contactpage to fresh start</a>
+  <% } else{ %>
+  <p>No user data available</p>
+  <p>go to contact page for filling user data</p>
+  <a href="/contact">contact page</a>
+  <% } %>
+</main>
+
+<%- include('layout/footer') %>

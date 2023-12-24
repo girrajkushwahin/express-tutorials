@@ -31,37 +31,37 @@
 
 
 
-const path=require('path');
+const path = require('path');
 const express = require('express');
-const app=express();
-const hbs=require('hbs');
-port=8000;
+const app = express();
+const hbs = require('hbs');
+port = 8000;
 
-const staticPath=path.join(__dirname,'../public -index4');
-const templatePath=path.join(__dirname,'../templates/views');
-const partialsPath=path.join(__dirname,'../templates/partials');
+const staticPath = path.join(__dirname, '../public -index4');
+const templatePath = path.join(__dirname, '../templates/views');
+const partialsPath = path.join(__dirname, '../templates/partials');
 
 // to set the view engine
-app.set('view engine','hbs');
+app.set('view engine', 'hbs');
 // views renamed to templates
-app.set('views',templatePath);
+app.set('views', templatePath);
 hbs.registerPartials(partialsPath);
 
 app.use(express.static(staticPath));
 
 // template engine route
-app.get('/',(req,res)=>{
-    res.render('index',{
-        dynamicContent:"dyndata"
+app.get('/', (req, res) => {
+    res.render('index', {
+        dynamicContent: "dyndata"
     });
 })
-app.get('/about',(req,res)=>{
+app.get('/about', (req, res) => {
     res.render('about');
 })
-app.get('/contact',(req,res)=>{
+app.get('/contact', (req, res) => {
     res.sendFile(`${staticPath}/contact.html`);
 })
 
-app.listen(port,()=>{
+app.listen(port, () => {
     console.log('listening to port 8000');
 })

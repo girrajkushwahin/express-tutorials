@@ -1,0 +1,39 @@
+<%- include('layout/header') %>
+
+    <main>
+    <h1>Hello from server...</h1>
+
+    <h1>First...</h1>
+    <% if(colors.length>0){ %>
+    <li><%= colors[0] %></li>
+    <li><%= colors[1] %></li>
+    <% } else{ %>
+    <p>no data available in 'colors' array</p>
+    <% } %>
+
+    <h1>Second...</h1>
+    <% names.forEach(elem => { %>
+    <li><%= elem %></li>
+    <% }) %>
+
+    <h1>Third...</h1>
+    <ul>
+    <% if(plNames.length>0){ %>
+      <% for(let i=0; i<plNames.length; i++){ %>
+        <li><%= plNames[i] %></li>
+    <% } %>
+    <% } else{ %>
+      <p>no data available in 'plNames' array</p>
+    <% } %>
+    </ul>
+
+    <a href="/contact">go to contact page</a> <br>
+    <a href="/user">go to user page</a>
+
+    <!-- <% locals.names.forEach(elem => { %>
+    <li><%= elem %></li>
+    <% }) %> -->
+    </main>
+    
+<%- include('layout/footer') %>
+

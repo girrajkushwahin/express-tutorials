@@ -1,0 +1,20 @@
+=> EJS : 
+- is a templating engine.
+- is simple, lightweight and fast
+- most downloaded on npm
+- founded in feb, 2011
+- created by TJ Holowaychuk
+
+- npm install ejs
+- app.set('view engine','ejs')
+- app.set('views',path.resolve('./views'))
+- in views dir, index.ejs
+- in route handler, res.render('index',{})
+
+=> Here above, in res.render('index',{}), we can pass data to the index.ejs file inside this object. This data is received by index.ejs file for showing or performing other operations on this data.
+
+<% js-code %>
+<%= ejs-variable %>
+<%- include("layout/header") %>
+
+When developing the layout of a webpage, we follow component based approach to reuse the code. Above syntax is used for including other ejs code(component) in working ejs file.
